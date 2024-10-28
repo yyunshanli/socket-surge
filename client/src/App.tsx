@@ -9,8 +9,27 @@ import { InlineMath, BlockMath } from 'react-katex';
 function App() {
   const [String,setString] = useState('');
   const [count,setCount] = useState(0);
+
+  const renderMath = (input: string) => {
+    // Split the input into parts based on $ and render lateX when found
+    const parts = input.split(/(\$[^\$]*\$)/g); 
+   
+    return (
+      <>
+        {parts.map((part, index) => {
+          // Check if the part is wrapped in $...$
+          if (part.startsWith('$') && part.endsWith('$')) {
+            const mathContent = part.slice(1, -1); // Remove the $ from both ends
+            return <InlineMath key={index} math={mathContent} />; // Render as laTex
+          } else {
+            return <span key={index}>{part}</span>; // Return raw text if not in $
+          }
+        })}
+      </>
+    );
+  };
+
   return (
-    
     <>
       <div>
         <a href="https://vite.dev" target="_blank">
@@ -25,7 +44,9 @@ function App() {
         setString(e.target.value)
       }
       }/>
-      <InlineMath math={String}></InlineMath>
+      <div className="output-container">
+          {renderMath(String)}
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
