@@ -1,24 +1,24 @@
-import { useState,useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import 'katex/dist/katex.min.css'; // Import the CSS file
-import { InlineMath, BlockMath } from 'react-katex'; 
-
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import "katex/dist/katex.min.css"; // Import the CSS file
+import { InlineMath, BlockMath } from "react-katex";
 
 function App() {
-  const [String,setString] = useState('');
-  const [count,setCount] = useState(0);
+  const [String, setString] = useState("");
+  const [count, setCount] = useState(0);
 
   const renderMath = (input: string) => {
     // Split the input into parts based on $ and render lateX when found
-    const parts = input.split(/(\$[^\$]*\$)/g); 
-   
+    const parts = input.replaceAll("\n", "$\\\\$").split(/(\$[^\$]*\$)/g);
+    console.log(JSON.stringify(parts));
     return (
       <>
         {parts.map((part, index) => {
           // Check if the part is wrapped in $...$
-          if (part.startsWith('$') && part.endsWith('$')) {
+
+          if (part.startsWith("$") && part.endsWith("$")) {
             const mathContent = part.slice(1, -1); // Remove the $ from both ends
             return <InlineMath key={index} math={mathContent} />; // Render as laTex
           } else {
@@ -40,13 +40,12 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <input type="text" onChange={(e)=>{
-        setString(e.target.value)
-      }
-      }/>
-      <div className="output-container">
-          {renderMath(String)}
-      </div>
+      <textarea
+        onChange={(e) => {
+          setString(e.target.value);
+        }}
+      />
+      <div className="output-container">{renderMath(String)}</div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -59,7 +58,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
