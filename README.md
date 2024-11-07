@@ -48,7 +48,7 @@ If you're interested in what technology we used to build Socket Surge, here's a 
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [React](https://legacy.reactjs.org/docs/getting-started.html)
 - [Node.js](https://nodejs.org/docs/latest/api/)
-- [MongoDB](https://www.mongodb.com/docs/) (maybe SupaBase)
+- [SupaBase](https://supabase.com/docs) (maybe [MongoDB](https://www.mongodb.com/docs/))
 - [KaTeX API](https://katex.org/docs/api)
 - [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 - [Socket.IO](https://socket.io/docs/v4/) (only a maybe rn)
