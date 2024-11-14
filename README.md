@@ -10,7 +10,6 @@ Benjamin Miller (Bem!),
 Mitchell Moundraty,
 Hieu Nguyen,
 James Young,
-Annie Qian,
 May Hong
 
 
