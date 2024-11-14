@@ -10,7 +10,8 @@ Benjamin Miller (Bem!),
 Mitchell Moundraty,
 Hieu Nguyen,
 James Young,
-Annie Qian
+Annie Qian,
+May Hong
 
 
 # Introduction
@@ -49,7 +50,7 @@ If you're interested in what technology we used to build Socket Surge, here's a 
 - [React](https://legacy.reactjs.org/docs/getting-started.html)
 - [Node.js](https://nodejs.org/docs/latest/api/)
 - [SupaBase](https://supabase.com/docs) (maybe [MongoDB](https://www.mongodb.com/docs/))
-- [KaTeX API](https://katex.org/docs/api)
+- [WE ARE DECIDING OUR LATEX API RN](fill_in_url)
 - [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 - [Socket.IO](https://socket.io/docs/v4/) (only a maybe rn)
 
