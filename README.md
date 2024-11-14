@@ -14,7 +14,7 @@ May Hong
 
 
 # Introduction
-Our project, "Socket Surge" aims to create a (Someone fill dis)
+Our project, "Socket Surge" aims to create a free collaborative online LaTex editor 
 
 # What it does
 Socket Surge (what it do)
