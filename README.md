@@ -1,6 +1,19 @@
 This is a project that is currently in development. If you're interested in following along, we will be documenting our process on (somone fill dis in) !
 
 ---
+# Set up
+
+backend\
+```cd backend```\
+run ```npm install``` to install all dependencies\
+```npm run start```
+
+
+frontend\
+```cd frontend```\
+run ```npm install``` to install all dependencies\
+```npm run dev```
+
 
 # Hello we are, Socket Surge!
 Sophia Li,
