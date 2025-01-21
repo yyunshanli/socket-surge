@@ -1,65 +1,24 @@
-import { useState,useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import 'katex/dist/katex.min.css'; // Import the CSS file
-import { InlineMath, BlockMath } from 'react-katex'; 
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// page imports
+import Main from './pages/main.tsx';
+import Login from './pages/login.tsx';
+
+// component imports
 
 function App() {
-  const [String,setString] = useState('');
-  const [count,setCount] = useState(0);
-
-  const renderMath = (input: string) => {
-    // Split the input into parts based on $ and render lateX when found
-    const parts = input.split(/(\$[^\$]*\$)/g); 
-   
-    return (
-      <>
-        {parts.map((part, index) => {
-          // Check if the part is wrapped in $...$
-          if (part.startsWith('$') && part.endsWith('$')) {
-            const mathContent = part.slice(1, -1); // Remove the $ from both ends
-            return <InlineMath key={index} math={mathContent} />; // Render as laTex
-          } else {
-            return <span key={index}>{part}</span>; // Return raw text if not in $
-          }
-        })}
-      </>
-    );
-  };
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <input type="text" onChange={(e)=>{
-        setString(e.target.value)
-      }
-      }/>
-      <div className="output-container">
-          {renderMath(String)}
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+	<div>
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<Main/>}/>
+				<Route path='login' element={<Login/>}/>
+			</Routes>
+		</BrowserRouter>
+	</div>
+  );
 }
 
-export default App
+export default App;
